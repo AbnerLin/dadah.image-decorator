@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
+	"github.com/AbnerLin/imgdecorator/decorator"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -34,6 +35,8 @@ var (
 
 			settings, _ := json.Marshal(viper.AllSettings())
 			fmt.Println(string(settings))
+
+			decorator.Decorate(viper.GetViper())
 		},
 	}
 )
